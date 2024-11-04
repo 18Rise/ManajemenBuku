@@ -55,7 +55,7 @@ function showBooks() {
 
 // TODO: Define a function 'searchBookByPrice' that takes 'price' as a parameter and searches for a book by its price in the 'books' array.
 function searchBookByPrice(price) {
-    const foundBooks = books.filter(books => books.price === price);
+    const foundBooks = books.filter(book => book.price === price);
     if(foundBooks.length > 0){
         console.log("Books found at price : ", price);
         foundBooks.forEach(book => console.log(book));
@@ -83,7 +83,7 @@ function displayMenu(){
                 let category = prompt("Enter the category of the book : ");
                 let author = prompt("Enter the author of the book : ");
                 let genre = prompt("Enter the genre of the book : ");
-                let price = Int(prompt("Enter the price of the book : "));
+                let price = parseInt(prompt("Enter the price of the book : "));
                 addBook(title, category, author, genre, price);
                 break;
             case '2':
@@ -102,7 +102,7 @@ function displayMenu(){
                 break;
             case '5':
                 // TODO: Prompt the user to enter the price of the book to search and call 'searchBookByPrice' with the provided price.
-                let searchPrice = Int(prompt("Enter the price of the book you want to search : "));
+                let searchPrice = parseInt(prompt("Enter the price of the book you want to search : "));
                 searchBookByPrice(searchPrice);
                 break;
             case '6':
